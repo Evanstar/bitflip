@@ -1,2 +1,0 @@
-USE_X86_ISA = True
-PROTOCOL = 'MI_example'

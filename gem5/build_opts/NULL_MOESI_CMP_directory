@@ -1,2 +1,0 @@
-USE_NULL_ISA = True
-PROTOCOL='MOESI_CMP_directory'
