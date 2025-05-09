@@ -1,0 +1,18 @@
+Import("*")
+
+CDNCcim_flag = ARGUMENTS.get("CDNCcim", 0)
+if CDNCcim_flag == "1": # Needs to be compared as argument is string
+    SimObject("CimHandler.py", sim_objects=["CimHandler"])
+    SimObject(
+        "CimOperationInterface.py",
+        sim_objects=["CimOperationInterface", "CimFaultInjection"],
+    )
+
+    Source("cim_handler.cc")
+    Source("cim_operation_interface.cc")
+    Source("cim_fault_injection.cc")
+
+    DebugFlag("CIMDBG")
+
+    print(">>> CDNCcim modifications are enabled, and they are compiling...")
+
